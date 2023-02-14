@@ -99,3 +99,6 @@ C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList.Tests\obj\Debug\net6.0\re
 C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList.Tests\obj\Debug\net6.0\ToDoList.Tests.pdb
 C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList.Tests\obj\Debug\net6.0\ToDoList.Tests.genruntimeconfig.cache
 C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList.Tests\obj\Debug\net6.0\ref\ToDoList.Tests.dll
+C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList.Tests\bin\Debug\net6.0\ToDoList.deps.json
+C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList.Tests\bin\Debug\net6.0\ToDoList.runtimeconfig.json
+C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList.Tests\bin\Debug\net6.0\ToDoList.exe
