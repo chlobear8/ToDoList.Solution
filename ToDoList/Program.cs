@@ -1,16 +1,15 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
+//using Microsoft.AspNetCore.Builder;
+//using Microsoft.Extensions.DependencyInjection;
 //using System.Collections.Generic;
 //using System;
 //using ToDoList.Models;
 
-namespace ToDoList
-{
+//namespace ToDoList; //using statement because it only has one class
 
-  class Program
-  {
-    static void Main(string[] args)
-    {
+  //class Program
+  //{
+    //static void Main(string[] args)
+    //{
       WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
       builder.Services.AddControllersWithViews();
@@ -71,7 +70,6 @@ namespace ToDoList
     //       Main();
     //     }
     //   }
-    }
-  }
-}
+  //}
+//}
     
