@@ -89,7 +89,7 @@ namespace ToDoList.Models
       //_instances.Clear();
     }
 
-    public static Item Find(int searchId)
+    public static Item Find(int id)
     {
       // Temporarily returning placeholder item to get beyond compiler errors until we refactor to work with database.
       // Item placeholderItem = new Item("placeholder item");
@@ -103,7 +103,7 @@ namespace ToDoList.Models
       //We create a command object and add a query to its CommandText property
       //Always need to do this to make query
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = "SELECT * FROM items WHERE id = @This.Id;";
+      cmd.CommandText = "SELECT * FROM items WHERE id = @ThisId;";
 
       //We use parameter placeholders @ThisId and MySqlParameter object to
       //prevent SQL injection attacks
@@ -123,15 +123,16 @@ namespace ToDoList.Models
       {
         itemId = rdr.GetInt32(0);
         itemDescription = rdr.GetString(1);
-
-        //We close the connection
-        conn.Close();
-        if (conn != null)
-        {
-          conn.Dispose();
-        }
-        return foundItem;
       }
+      Item foundItem = new Item(itemDescription, itemId);
+
+      //We close the connection
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      return foundItem;
     }
 //     public static bool CheckExists(string str)
 //     {
