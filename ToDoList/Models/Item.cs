@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System;
 using ToDoList;
+using MySqlConnector;
 
 namespace ToDoList.Models
 {
@@ -17,14 +18,55 @@ namespace ToDoList.Models
       // Id = _instances.Count;
     }
 
+    public Item(string description, int id)
+    {
+      Description = description;
+      Id = id;
+    }
+
     public static List<Item> GetAll()
     {
-      return _instances;
+      List<Item> allItems = new List<Item> { };
+
+      MySqlConnection conn = new MySqlConnection(DBConfiguration.ConnectionString);
+
+      conn.Open();
+
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = "SELECT * FROM items;";
+
+      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+      while (rdr.Read())
+      {
+        int itemId = rdr.GetInt32(0);
+        string itemDescription = rdr.GetString(1);
+        Item newItem = new Item(itemDescription, itemId);
+        allItems.Add(newItem);
+      }
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      return allItems;
+      // return _instances;
     }
 
     public static void ClearAll()
     {
-      _instances.Clear();
+      MySqlConnection conn = new MySqlConnection(DBConfiguration.ConnectionString);
+        conn.Open();
+
+        MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+        cmd.CommandText = "DELETE FROM items;";
+        cmd.ExecuteNonQuery();
+
+        conn.Close();
+        if (conn != null)
+        {
+          conn.Dispose();
+        }
+      //_instances.Clear();
     }
 
     public static Item Find(int searchId)
