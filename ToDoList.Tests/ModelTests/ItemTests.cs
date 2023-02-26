@@ -75,27 +75,31 @@ namespace ToDoList.Tests
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
-//     [TestMethod]
-//     public void GetAll_ReturnsItems_ItemList()
-//     {
-//       //Arrange
-//       string description01 = "Walk the dog.";
-//       string description02 = "Wash the dishes.";
-//       Item newItem1 = new Item(description01);
-//       Item newItem2 = new Item(description02);
-//       List<Item> newList = new List<Item> { newItem1, newItem2 };
 
-//       //Act
-//       List<Item> result = Item.GetAll();
+    [TestMethod]
+    public void GetAll_ReturnsItems_ItemList()
+    {
+      //Arrange
+      string description01 = "Walk the dog.";
+      string description02 = "Wash the dishes.";
+      Item newItem1 = new Item(description01);
+      newItem1.Save();
+      Item newItem2 = new Item(description02);
+      newItem2.Save();
+      List<Item> newList = new List<Item> { newItem1, newItem2 };
+
+      //Act
+      List<Item> result = Item.GetAll();
 
 //       // foreach (Item thisItem in result)
 //       // {
 //       //   Console.WriteLine("Output from the second GetAll test: " + thisItem.Description);
 //       // }
 
-//       //Assert
-//       CollectionAssert.AreEqual(newList, result);
-//     }
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
+
 //     [TestMethod]
 //     public void GetId_ItemsInstantiateWithAnIdAndGetterReturns_Int()
 //     {
