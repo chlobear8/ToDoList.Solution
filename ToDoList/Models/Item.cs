@@ -92,9 +92,46 @@ namespace ToDoList.Models
     public static Item Find(int searchId)
     {
       // Temporarily returning placeholder item to get beyond compiler errors until we refactor to work with database.
-      Item placeholderItem = new Item("placeholder item");
-      return placeholderItem;
+      // Item placeholderItem = new Item("placeholder item");
+      // return placeholderItem;
       // return _instances[searchId - 1];
+
+      //We open a connection
+      MySqlConnection conn = new MySqlConnection(DBConfiguration.ConnectionString);
+      conn.Open();
+
+      //We create a command object and add a query to its CommandText property
+      //Always need to do this to make query
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = "SELECT * FROM items WHERE id = @This.Id;";
+
+      //We use parameter placeholders @ThisId and MySqlParameter object to
+      //prevent SQL injection attacks
+      //Only necessary when we are passing parameters into a query
+      MySqlParameter param = new MySqlParameter();
+      param.ParameterName = "@ThisId";
+      param.Value = id;
+      cmd.Parameters.Add(param);
+
+      //We use ExecuteReader() method bc query will be returning results
+      //makes these results readable
+      //ExecuteNonQuery() is for methods w/o return results
+      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+      int itemId = 0;
+      string itemDescription = "";
+      while (rdr.Read())
+      {
+        itemId = rdr.GetInt32(0);
+        itemDescription = rdr.GetString(1);
+
+        //We close the connection
+        conn.Close();
+        if (conn != null)
+        {
+          conn.Dispose();
+        }
+        return foundItem;
+      }
     }
 //     public static bool CheckExists(string str)
 //     {
