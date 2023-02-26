@@ -102,3 +102,6 @@ C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList.Tests\obj\Debug\net6.0\re
 C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList.Tests\bin\Debug\net6.0\ToDoList.deps.json
 C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList.Tests\bin\Debug\net6.0\ToDoList.runtimeconfig.json
 C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList.Tests\bin\Debug\net6.0\ToDoList.exe
+C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList.Tests\bin\Debug\net6.0\ToDoList.staticwebassets.runtime.json
+C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList.Tests\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList.Tests\bin\Debug\net6.0\appsettings.json

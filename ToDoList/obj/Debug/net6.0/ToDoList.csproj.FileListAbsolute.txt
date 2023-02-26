@@ -19,3 +19,7 @@ C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList\obj\Debug\net6.0\ToDoList
 C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList\obj\Debug\net6.0\scopedcss\bundle\ToDoList.styles.css
+C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList\bin\Debug\net6.0\ToDoList.staticwebassets.runtime.json
+C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList\obj\Debug\net6.0\ToDoList.csproj.CopyComplete
+C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList\bin\Debug\net6.0\appsettings.json
