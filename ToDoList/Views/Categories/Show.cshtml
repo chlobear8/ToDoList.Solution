@@ -16,6 +16,9 @@
 
     <ol>
     @foreach (Item item in @Model["items"])
+    /* loop through all Items in model and pass the view a Dictionary containing KVP so we access ItemS w/ @Model["items"]
+    for each Item we display its description in a <li>
+    each <li> has a link path for detail view */
     {
       <li><a href='/categories/@Model["category"].Id/items/@item.Id'>@item.Description</a></li>
     }
@@ -26,3 +29,4 @@
     <p><a href='/'>Return to Main Page</a></p>
   </body>
 </html>
+

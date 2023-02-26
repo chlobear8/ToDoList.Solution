@@ -20,6 +20,7 @@
     } 
 
     @foreach (Category category in Model)
+    /*adds links to each Category name */
     {
       <h3><a href='/categories/@category.Id'>@category.Name</a></h3>
     }

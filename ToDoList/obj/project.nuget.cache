@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "I4iR8C6tsrIxYu4OZDOrlOGya9NV8qixFR1R2fUpNR4ZLj5D7Oi1E3D7Lr3xeKTY7i7RNZf0tcBCFVgcQTBGYw==",
+  "dgSpecHash": "qMeu7hshmQRuhbmr+Z4p/DwrspTTDN7qlEcUII+iqkpwVgkrA9uuUCRrqyFhHKIRtMOgNcMBC4L+9pBx9Rgv5g==",
   "success": true,
   "projectFilePath": "C:\\Users\\chloe\\ToDo-Project\\ToDoList.Solution\\ToDoList\\ToDoList.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\chloe\\.nuget\\packages\\mysqlconnector\\2.2.0\\mysqlconnector.2.2.0.nupkg.sha512"
+  ],
   "logs": []
 }
