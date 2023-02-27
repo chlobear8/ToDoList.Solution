@@ -1,22 +1,27 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using System.Collections.Generic;
-using System;
-using ToDoList.Models;
+// using Microsoft.AspNetCore.Builder;
+// using Microsoft.Extensions.DependencyInjection;
+// using System.Collections.Generic;
+// using System;
+// using ToDoList.Models;
 
-namespace ToDoList; //using statement because it only has one class
+// namespace ToDoList; //using statement because it only has one class
 
-  class Program
-  {
-    static void Main(string[] args)
-    {
+//   class Program
+//   {
+//     static void Main(string[] args)
+//     {
       WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
       builder.Services.AddControllersWithViews();
 
-      DBConfiguration.ConnectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
+      builder.Services.AddDbContext<ToDoListContext>(dbContextOptions => dbContextOptions.UseMySql(builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]
+          )
+        )
+      );
 
       WebApplication app = builder.Build();
+
+      //app.UseDeveloperExceptionPage();
 
       app.UseHttpsRedirection();
 
@@ -72,6 +77,6 @@ namespace ToDoList; //using statement because it only has one class
     //       Main();
     //     }
     //   }
-  }
-}
+//   }
+// }
     
