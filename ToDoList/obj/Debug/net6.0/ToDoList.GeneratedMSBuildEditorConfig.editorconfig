@@ -15,18 +15,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\chloe\ToDo-Project\ToDoList.Solution\ToDoList
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/chloe/ToDo-Project/ToDoList.Solution/ToDoList/Views/Categories/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/chloe/ToDo-Project/ToDoList.Solution/ToDoList/Views/Categories/New.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xOZXcuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/chloe/ToDo-Project/ToDoList.Solution/ToDoList/Views/Categories/Show.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xTaG93LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/chloe/ToDo-Project/ToDoList.Solution/ToDoList/Views/Home/FavoritePhotos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGYXZvcml0ZVBob3Rvcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -35,20 +23,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chloe/ToDo-Project/ToDoList.Solution/ToDoList/Views/Items/DeleteAll.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbXNcRGVsZXRlQWxsLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/chloe/ToDo-Project/ToDoList.Solution/ToDoList/Views/Items/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbXNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/chloe/ToDo-Project/ToDoList.Solution/ToDoList/Views/Items/New.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbXNcTmV3LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/chloe/ToDo-Project/ToDoList.Solution/ToDoList/Views/Items/Show.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbXNcU2hvdy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/chloe/ToDo-Project/ToDoList.Solution/ToDoList/Views/Shared/Footer.cshtml]
