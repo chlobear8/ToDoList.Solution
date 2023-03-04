@@ -4,10 +4,10 @@ namespace ToDoList.Models
 {
   public class Category
   {
-    private static List<Category> _instances = new List<Category> {};
+    public int CategoryId { get; set; }
     public string Name { get; set; }
-    public int Id { get; }
     public List<Item> Items { get; set; }
+  
 
     /* _instances contains static List of all Category objects
     Name contains a name for Category items
