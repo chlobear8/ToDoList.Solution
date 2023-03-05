@@ -1,79 +1,74 @@
-// using System.Collections.Generic;
-// using System;
-// using Microsoft.AspNetCore.Mvc;
-// using ToDoList.Models;
+using Microsoft.AspNetCore.Mvc;
+using ToDoList.Models;
+using System.Collections.Generic;
+using System.Linq;
 
-// namespace ToDoList.Controllers
-// {
-//   public class CategoriesController : Controller
-//   {
+namespace ToDoList.Controllers
+{
+  public class CategoriesController : Controller
+  {
+    private readonly ToDoListContext _db;
 
-//     [HttpGet("/categories")]
-//     public ActionResult Index()
-//     {
-//       List<Category> allCategories = Category.GetAll();
-//       return View(allCategories);
-//       /* index route to display all CategoryS */
-//     }
+    public CategoriesController(ToDoListContext db)
+    {
+      _db = db;
+    }
 
-//     [HttpGet("/categories/new")]
-//     public ActionResult New()
-//     {
-//       return View();
-//       /* ensures user can create new CategoryS w/ a form */
-//     }
+    public ActionResult Index()
+    {
+      List<Category> model = _db.Categories.ToList();
+      return View(model);
+    }
 
-//     [HttpPost("/categories")]
-//     public ActionResult Create(string categoryName)
-//     {
-//       Category newCategory = new Category(categoryName);
-//       return RedirectToAction("Index");
-//       /* specify POST
-//       route accepts a categoryName argument
-//       in the route create a new Category w/ that name and call RedirectToAction method w/ "Index" passed as argument to send user back to Index route */
-//     }
+    public ActionResult Create()
+    {
+      return View();
+    }
 
-//     [HttpGet("/categories/{id}")]
-//     public ActionResult Show(int id)
-//     {
-//       Dictionary<string, object> model = new Dictionary<string, object>();
-//       Category selectedCategory = Category.Find(id);
-//       List<Item> categoryItems = selectedCategory.Items;
-//       model.Add("category", selectedCategory);
-//       model.Add("items", categoryItems);
-//       return View(model);
-//       /* shows both Category and all Item objects saved
-//       passes two types of objects to the view, but view can only accept one
-//       create a new Dictionary called model
-//       add both Category and associated ItemS to Dictionary
-//       stored as keys "category" and "items"
-//       Dictionary is named model passed into View() */
-//     }
+    [HttpPost]
+    public ActionResult Create(Item item)
+    {
+      _db.Categories.Add(item);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
-// // Creates new Items within a given Category, not new Categories:
+    public ActionResult Details(int id)
+    {
+      Item thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
+      return View(thisItem);
+    }
 
-//     [HttpPost("/categories/{categoryId}/items")]
-//     public ActionResult Create(int categoryId, string itemDescription)
-//     {
-//       Dictionary<string, object> model = new Dictionary<string, object>();
-//       Category foundCategory = Category.Find(categoryId);
-//       Item newItem = new Item(itemDescription);
-//       newItem.Save();
-//       foundCategory.AddItem(newItem);
-//       List<Item> categoryItems = foundCategory.Items;
-//       model.Add("items", categoryItems);
-//       model.Add("category", foundCategory);
-//       return View("Show", model);
-//       /* update method path to follow RESTful convention
-//       method now takes two arguments, categoryId is passed into hidden form field and itemDescription that contains users input
-//       create new empty Dictionary named model
-//       uses categoryId provided as an argument, locates Category object that new Item should belong to and call foundCategory
-//       create new Item object w/ users input
-//       add newItem to foundCategory w/ existing AddItem() method
-//       retrieve all other ItemS in category and add to model
-//       add foundCategory to model
-//       pass model data to View() instructing to render Category detail page (Show.cshtml) */
-//     }
+    public ActionResult Edit(int id)
+    {
+      Item thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
+      return View(thisItem);
+    }
 
-//   }
-// }
+    [HttpPost]
+    public ActionResult Edit(Item item)
+    {
+      _db.Items.Update(item);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult Delete(int id)
+    {
+      Item thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
+      return View(thisItem);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      Item thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
+      _db.Items.Remove(thisItem);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+  }
+}
+
+    
+
