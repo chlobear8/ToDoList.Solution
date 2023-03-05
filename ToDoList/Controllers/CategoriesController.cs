@@ -26,9 +26,9 @@ namespace ToDoList.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Item item)
+    public ActionResult Create(Category category)
     {
-      _db.Categories.Add(item);
+      _db.Categories.Add(category);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
