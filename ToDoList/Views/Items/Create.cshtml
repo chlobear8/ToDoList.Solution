@@ -4,10 +4,11 @@
 
 @model ToDoList.Models.Item //namespace then class
 <!-- only one model to each view -->
+<h4>Add a new item</h4>
+
 <p><strong>NOTE:</strong> You need to have at least one category before you can add an item!</p>
 <p>Go to @Html.ActionLink("this page", "Create", "Categories") to create a category.</p>
 
-<h4>Add a new item</h4>
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.Description)

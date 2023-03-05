@@ -1,8 +1,3 @@
-using System.Collections.Generic;
-using System;
-using ToDoList;
-using MySqlConnector;
-
 namespace ToDoList.Models
 {
   public class Item

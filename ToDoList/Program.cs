@@ -4,6 +4,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
+namespace ToDoList
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+
       WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
       builder.Services.AddControllersWithViews();
@@ -32,5 +39,8 @@ using Microsoft.Extensions.DependencyInjection;
       );
 
       app.Run();
+    }
+  }
+}
 
     
