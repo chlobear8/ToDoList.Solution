@@ -4,12 +4,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ToDoList
-{
-  class Program
-  {
-    static void Main(string[] args)
-    {
+// namespace ToDoList
+// {
+//   class Program
+//   {
+//     static void Main(string[] args)
+//     {
 
       WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -39,8 +39,8 @@ namespace ToDoList
       );
 
       app.Run();
-    }
-  }
-}
+//     }
+//   }
+// }
 
     
