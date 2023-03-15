@@ -18,6 +18,12 @@
     @Html.LabelFor(model => model.Category)
     @Html.DropDownList("CategoryId")
 
+    @Html.LabelFor(model => model.IsComplete, "Finished")
+    @Html.CheckBoxFor(model => model.IsComplete)
+
+    @Html.LabelFor(model => model.DueDate)
+    @Html.TextBoxFor(model => model.DueDate, new { type = "date: 'shortDate'" })
+
     <input type="submit" value="Save" />
 }
 <p>@Html.ActionLink("Back to list", "Index")</p>

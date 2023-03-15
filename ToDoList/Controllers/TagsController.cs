@@ -10,6 +10,8 @@ namespace ToDoList.Controllers
   public class TagsController : Controller
   {
     private readonly ToDoListContext _db;
+    
+    public TagsController(ToDoListContext db)
     {
       _db = db;
     }

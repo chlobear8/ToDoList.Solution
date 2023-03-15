@@ -21,6 +21,7 @@ namespace ToDoList.Controllers
     {
       List<Item> model = _db.Items
                             .Include(item => item.Category)
+                            .OrderBy(item => item.IsComplete ? 1 : 0)
                             .ToList();
       return View(model);
     }
@@ -51,7 +52,7 @@ namespace ToDoList.Controllers
     {
       Item thisItem = _db.Items
                           .Include(item => item.Category)
-                          .Include(item => JoinEntities)
+                          .Include(item => item.JoinEntities)
                           .ThenInclude(join => join.Tag)
                           .FirstOrDefault(item => item.ItemId == id);
       return View(thisItem);
@@ -114,6 +115,14 @@ namespace ToDoList.Controllers
       ItemTag joinEntry = _db.ItemTags.FirstOrDefault(entry => entry.ItemTagId == joinId);
       _db.ItemTags.Remove(joinEntry);
       _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    
+    [HttpPost]
+    public ActionResult CompleteStatus(int id)
+    {
+      Item thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
       return RedirectToAction("Index");
     }
   }
