@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
+using System;
 
 namespace ToDoList.Models
 {
@@ -15,5 +16,14 @@ namespace ToDoList.Models
     public int CategoryId { get; set;}
     public Category Category { get; set; }
     public List<ItemTag> JoinEntities { get; }
+
+    public void FormatDate()
+    {
+      string inputString = this.DueDate;
+      string[] dateElements = inputString.Split('-');
+      DateTime date1 = new DateTime(Int32.Parse(dateElements[0]), Int32.Parse(dateElements[1]), Int32.Parse(dateElements[2]));
+      string outputString = date1.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
+      this.DueDate = outputString;
+    }
   }
 }

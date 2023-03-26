@@ -42,6 +42,7 @@ namespace ToDoList.Controllers
       }
       else
       {
+        item.FormatDate();
       _db.Items.Add(item);
       _db.SaveChanges();
       return RedirectToAction("Index");

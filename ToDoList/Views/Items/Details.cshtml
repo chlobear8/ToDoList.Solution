@@ -9,6 +9,7 @@
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)<h3>
 <h3>@Html.DisplayNameFor(model => model.Category): @Html.DisplayFor(model => model.Category.Name)<h3>
+
 @using (Html.BeginForm("CompleteStatus", "Items"))
 {
   <li>Completed: @Html.CheckBoxFor(item => item.IsComplete, new {onclick="this.form.submit();"})</li>
