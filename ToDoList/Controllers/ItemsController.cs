@@ -27,11 +27,15 @@ namespace ToDoList.Controllers
 
     public ActionResult Index()
     {
-      List<Item> model = _db.Items
-                            .Include(item => item.Category)
-                            .OrderBy(item => item.IsComplete ? 1 : 0)
-                            .ToList();
-      return View(model);
+      public async Task<ActionResult> Index()
+    {
+      string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
+      List<Item> userItems = _db.Items
+                          .Where(entry => entry.User.Id == currentUser.Id)
+                          .Include(item => item.Category)
+                          .ToList();
+      return View(userItems);
     }
 
     public ActionResult Create()
